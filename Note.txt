@@ -3,9 +3,10 @@
 
 open cmd master:
 1: composer install
-2: copy .env.example .env -> yes
+2: copy .env.example .env 'chọn yes'
 3: kết nối database, Tạo database tên fmusic
 4: php artisan key:generate
 
 5: php artisan serve
+
 6: php artisan migrate:fresh

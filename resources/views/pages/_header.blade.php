@@ -15,7 +15,7 @@
 			<div class="ms_sidemenu_inner">
 				<div class="ms_logo_inner">
 					<div class="ms_logo">
-						<a href="/"><img src="pages/assets/images/logo.png" alt="" class="img-fluid" /></a>
+						<a href="{{route('redirect')}}"><img src="pages/assets/images/logo.png" alt="" class="img-fluid" /></a>
 					</div>
 					<div class="ms_logo_open">
 						<a href="/"><img style="width: 170px;" src="pages/assets/images/open_logo.png" alt="" class="img-fluid" /></a>

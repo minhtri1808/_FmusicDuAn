@@ -22,3 +22,6 @@ Route::get('/artistsinger', function () {
 Route::get('/artist', function () {
     return view('pages/artist');
 });
+
+
+

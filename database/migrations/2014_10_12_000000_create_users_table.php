@@ -25,8 +25,10 @@ class CreateUsersTable extends Migration
             $table->string('avatar_original')->nullable();
 
             $table->integer('role')->default(0);
+            $table->integer('coins')->default(500);
+            $table->integer('statusPremium')->default(0);
             $table->integer('trangthaikichhoat')->default(1);
-
+            $table->date('ngayDangKi');
             $table->rememberToken();
             $table->timestamps();
         });

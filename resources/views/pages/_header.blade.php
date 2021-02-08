@@ -15,7 +15,7 @@
 			<div class="ms_sidemenu_inner">
 				<div class="ms_logo_inner">
 					<div class="ms_logo">
-						<a href="{{route('redirect')}}"><img src="pages/assets/images/logo.png" alt="" class="img-fluid" /></a>
+						<a href="#"><img src="pages/assets/images/logo.png" alt="" class="img-fluid" /></a>
 					</div>
 					<div class="ms_logo_open">
 						<a href="/"><img style="width: 170px;" src="pages/assets/images/open_logo.png" alt="" class="img-fluid" /></a>
@@ -163,8 +163,13 @@
 			</div>
 			<div class="ms_top_right">
 				<div class="ms_top_btn">
-					<a href="javascript:;" class="ms_btn reg_btn" data-toggle="modal" data-target="#myModal"><span>Đăng ký</span></a>
-					<a href="javascript:;" class="ms_btn login_btn" data-toggle="modal" data-target="#myModal1"><span>Đăng nhập</span></a>
+                    @if (Auth::check())
+                    <a href="{{route('signup.index')}}" class="ms_btn reg_btn">{{Auth::user()->name}}</a>
+					<a href="{{route('auth.logout')}}" class="ms_btn login_btn" ><span>Đăng xuất</span></a>
+                    @else
+                    <a href="{{route('signup.index')}}" class="ms_btn reg_btn"><span>Đăng ký</span></a>
+					<a href="{{route('auth.login')}}" class="ms_btn login_btn" ><span>Đăng nhập</span></a>
+                    @endif
 				</div>
 			</div>
 
@@ -182,4 +187,3 @@
 				</ul>
 			</div> -->
         </div>
-

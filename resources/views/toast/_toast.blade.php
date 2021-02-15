@@ -54,7 +54,7 @@
 
 #toast {
   position: fixed;
-  top: 80px;
+  top: 120px;
   right: 32px;
   z-index: 1000;
 }
@@ -71,6 +71,7 @@
   box-shadow: 0 5px 8px rgba(0, 0, 0, 0.08);
   transition: all linear 0.3s;
 }
+
 
 @keyframes slideInLeft {
   from {

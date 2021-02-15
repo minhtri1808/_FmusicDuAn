@@ -32,17 +32,25 @@ class authController extends Controller
                 return redirect()->route('auth.login')->with('message', 'Tài khoản đã bị khóa vui lòng liên hệ admin');
             }
             if (Auth::user()->role==0) {
-                return redirect()->route('home');
+                return redirect()->route('home')->with('success', 'Đăng nhập thành công');
             } else {
-                return redirect()->route('admin');
+                return redirect()->route('admin')->with('success', 'Đăng nhập thành công');
             }
         }
     }
 
     public function logout()
     {
-        Auth::logout();
+        $data = Auth::user()->role;
+        if ($data == 0) {
+            Auth::logout();
+            return redirect('/');
+        } else {
+            Auth::logout();
+            return redirect()->route('auth.login');
+        }
+        // Auth::logout();
 
-        return redirect()->route('auth.login');
+        // return redirect()->route('auth.login');
     }
 }

@@ -164,13 +164,20 @@
 			<div class="ms_top_right">
 				<div class="ms_top_btn">
                     @if (Auth::check())
-                    <a href="{{route('signup.index')}}" class="ms_btn reg_btn">{{Auth::user()->name}}</a>
+                    <a href="{{route('signup.index')}}" class="text-uppercase">{{Auth::user()->name}}</a>
 					<a href="{{route('auth.logout')}}" class="ms_btn login_btn" ><span>Đăng xuất</span></a>
                     @else
                     <a href="{{route('signup.index')}}" class="ms_btn reg_btn"><span>Đăng ký</span></a>
 					<a href="{{route('auth.login')}}" class="ms_btn login_btn" ><span>Đăng nhập</span></a>
                     @endif
 				</div>
+
+                @include('./../toast/_toast')
+                @if (session('success'))
+                <script>
+                    showSuccessToast().click();
+                </script>
+                @endif
 			</div>
 
 			<!-- ########### NẾU LÀ USER ###########3 -->

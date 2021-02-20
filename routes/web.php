@@ -5,6 +5,7 @@ use App\Http\Controllers\authController;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\homeControler;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\TrackSingerController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,6 +26,9 @@ Route::get('/artistsinger', function () {
 Route::get('/artist', function () {
     return view('pages/artist');
 });
+
+
+Route::get('/TrackSingerController',[TrackSingerController::class, 'index'])->name('TrackSingerController.index');
 
 Route::get('/auth/login',[authController::class, 'login'])->name('auth.login');
 Route::post('/auth/login',[authController::class, 'store'])->name('auth.post');

@@ -2227,7 +2227,10 @@ h1.footer_title:after {
 }
 
 .play_song_name span.que_img img {
+    width: 50px;
+    height: 50px;
     border-radius: 5px;
+    object-fit: cover;
 }
 
 .play_song_name .que_data {
@@ -2813,7 +2816,10 @@ i.ms_icon.icon_share {
 }
 
 .jp-playlist span.que_img img {
+    width: 50px;
+    height: 50px;
     border-radius: 5px;
+    object-fit: cover;
 }
 
 .jp-playlist .que_data {
@@ -7451,4 +7457,9 @@ h2.widget-title:after {
         -ms-flex-preferred-size: 190px;
         flex-basis: 190px;
     }
+}
+.img_240_format {
+    width: 240px;
+    height: 240px;
+    object-fit: cover;
 }

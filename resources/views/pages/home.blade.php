@@ -1,6 +1,6 @@
 @extends('./../layouts/master')
 
-@section('title','Âm nhạc và bạn')
+@section('title','Trang chủ')
 
 <!---Banner--->
 @section('content')

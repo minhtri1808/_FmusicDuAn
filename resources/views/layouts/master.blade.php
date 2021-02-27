@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>Fmusic - @yield('title')</title>
+	<title>@yield('title') | FMusic - Âm nhạc và bạnㅤㅤ</title>
 	<meta charset="utf-8">
 	<meta content="width=device-width, initial-scale=1.0" name="viewport">
 	<meta name="description" content="Music">
@@ -16,22 +16,24 @@
 </head>
 
 <body>
-@include('./../pages/_header')
-@section('title','Âm nhạc và bạn')
+	@include('./../pages/_header')
+	@section('title','Âm nhạc và bạn')
 
-<div id="pjax-container">
-    @yield('content')
-</div>
+	<div id="pjax-container">
+		@yield('content')
+	</div>
 
-@include('./../pages/_footer')
+	@include('./../pages/_footer')
 
-@include('./../pages/_javascript')
+	@include('./../pages/_javascript')
 
-{{-- <script>
+	{{-- <script>
     $(document).ready(function(){
         $(document).pjax('a', '#pjax-container');
         console.log(1);
     });
+
+
 </script> --}}
 
 </body>

@@ -348,5 +348,3 @@
     </div>
 </div>
 <!--Main js file Style-->
-
-

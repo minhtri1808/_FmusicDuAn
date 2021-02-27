@@ -152,7 +152,7 @@
 		<div class="ms_header">
 			<div class="ms_top_left">
 				<div class="ms_top_search">
-					<input type="text" class="form-control" placeholder="Search Music Here..">
+					<input type="text" class="form-control" placeholder="Bạn cần tìm gì..">
 					<span class="search_icon">
 						<img src="pages/assets/images/svg/search.svg" alt="">
 					</span>

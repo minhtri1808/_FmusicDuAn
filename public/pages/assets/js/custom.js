@@ -4,13 +4,13 @@ Project: Miraculous - Online Music Store Html Template
 Version: 1.0.0
 Assigned to: Theme Forest
 -------------------------------------------------------------------*/
-(function($) {
+(function ($) {
     "use strict";
     var music = {
         initialised: false,
         version: 1.0,
         mobile: false,
-        init: function() {
+        init: function () {
             if (!this.initialised) {
                 this.initialised = true;
             } else {
@@ -30,45 +30,45 @@ Assigned to: Theme Forest
         },
         /*-------------- Music Functions definition ---------------------------------------------------
         ---------------------------------------------------------------------------------------------------*/
-        RTL: function() {
+        RTL: function () {
             var rtl_attr = $("html").attr('dir');
             if (rtl_attr) {
                 $('html').find('body').addClass("rtl");
             }
         },
         // Toggle Menu
-        Menu: function() {
-            $(".ms_nav_close").on('click', function() {
+        Menu: function () {
+            $(".ms_nav_close").on('click', function () {
                 $(".ms_sidemenu_wrapper").toggleClass('open_menu');
             });
             // on click player list
-            $(".play-left-arrow").on('click', function() {
+            $(".play-left-arrow").on('click', function () {
                 $(".player_left").toggleClass('open_list');
             });
             //On Click Profile 
-            $(".ms_admin_name").on('click', function() {
+            $(".ms_admin_name").on('click', function () {
                 $(".pro_dropdown_menu").toggleClass("open_dropdown");
             });
         },
         // Player Close On Click
-        Player_close: function() {
-            $(".ms_player_close").on('click', function() {
+        Player_close: function () {
+            $(".ms_player_close").on('click', function () {
                 $(".ms_player_wrapper").toggleClass("close_player");
                 $("body").toggleClass("main_class")
             })
         },
         // Pop Up
-        Popup: function() {
-            $('.clr_modal_btn a').on('click', function() {
+        Popup: function () {
+            $('.clr_modal_btn a').on('click', function () {
                 $('#clear_modal').hide();
                 $('.modal-backdrop').hide();
                 $('body').removeClass("modal-open").css("padding-right", "0px");
             })
-            $('.hideCurrentModel').on('click', function() {
+            $('.hideCurrentModel').on('click', function () {
                 $(this).closest('.modal-content').find('.form_close').trigger('click');
             });
             // Language Popup
-            $('.lang_list').find("input[type=checkbox]").on('change', function() {
+            $('.lang_list').find("input[type=checkbox]").on('change', function () {
                 if ($('.lang_list').find("input[type=checkbox]:checked").length) {
                     $('.ms_lang_popup .modal-content').addClass('add_lang');
                 } else {
@@ -77,7 +77,7 @@ Assigned to: Theme Forest
             });
         },
         // Slider
-        Slider: function() {
+        Slider: function () {
             var swiper = new Swiper('.swiper-container', {
                 slidesPerView: 6,
                 spaceBetween: 30,
@@ -330,8 +330,8 @@ Assigned to: Theme Forest
             });
         },
         // More
-        More: function() {
-            $(".ms_more_icon").on('click', function(e) {
+        More: function () {
+            $(".ms_more_icon").on('click', function (e) {
                 e.preventDefault();
                 e.stopImmediatePropagation();
                 if (typeof $(this).attr('data-other') != 'undefined') {
@@ -346,15 +346,15 @@ Assigned to: Theme Forest
                     target.find("ul.more_option").addClass('open_option');
                 }
             });
-            $(document).on("click", function(e) {
+            $(document).on("click", function (e) {
                 $("ul.more_option.open_option").removeClass("open_option");
             })
             // On Button Click
-            $(".ms_btn.play_btn").on('click', function() {
+            $(".ms_btn.play_btn").on('click', function () {
                 $('.ms_btn.play_btn').toggleClass('btn_pause');
             });
-            $(document).on('click', '#playlist-wrap ul li .action .que_more', function(e) {
-				e.preventDefault();
+            $(document).on('click', '#playlist-wrap ul li .action .que_more', function (e) {
+                e.preventDefault();
                 e.stopImmediatePropagation();
                 $('#playlist-wrap ul li .action .que_more').not($(this)).closest('li').find('.more_option').removeClass('open_option');
                 $(this).closest('li').find('.more_option').toggleClass('open_option');
@@ -363,7 +363,7 @@ Assigned to: Theme Forest
             // $('#playlist-wrap ul li .more_option').removeClass('open_option');
             // });
 
-            $(document).on('click', function(e) {
+            $(document).on('click', function (e) {
                 if (!$(e.target).closest('.more_option').length && !$(e.target).closest('.action').length) {
                     $('#playlist-wrap .more_option').removeClass('open_option');
                 }
@@ -372,51 +372,51 @@ Assigned to: Theme Forest
                 }
             });
             //
-            $('.jp_queue_cls').on('click', function(e) {
+            $('.jp_queue_cls').on('click', function (e) {
                 $('#playlist-wrap').hide();
             });
 
         },
         // Nice Select
-        Nice_select: function() {
+        Nice_select: function () {
             if ($('.custom_select').length > 0) {
                 $('.custom_select select').niceSelect();
             }
         },
-        showPlayList: function() {
-            $(document).on('click', '#myPlaylistQueue', function() {
+        showPlayList: function () {
+            $(document).on('click', '#myPlaylistQueue', function () {
                 $('#playlist-wrap').fadeToggle();
             });
-            $('#playlist-wrap').on('click', '#myPlaylistQueue', function(event) {
+            $('#playlist-wrap').on('click', '#myPlaylistQueue', function (event) {
                 event.stopPropagation();
             });
         },
 
         // Volume 
-        volume: function() {
+        volume: function () {
             $(".knob-mask .knob").css("transform", "rotateZ(270deg)");
             $(".knob-mask .handle").css("transform", "rotateZ(270deg)");
 
         }
 
     };
-    $(document).ready(function() {
+    $(document).ready(function () {
         music.init();
-		
-		// Scrollbar
-		$(".ms_nav_wrapper").mCustomScrollbar({
-			theme:"minimal"
-		});
-		
-		// Queue Scrollbar
-		$(".jp_queue_list_inner").mCustomScrollbar({
-			theme:"minimal",
-			setHeight:345
-		});
+
+        // Scrollbar
+        $(".ms_nav_wrapper").mCustomScrollbar({
+            theme: "minimal"
+        });
+
+        // Queue Scrollbar
+        $(".jp_queue_list_inner").mCustomScrollbar({
+            theme: "minimal",
+            setHeight: 345
+        });
     });
     // Preloader Js
-    jQuery(window).on('load', function() {
-        setTimeout(function() {
+    jQuery(window).on('load', function () {
+        setTimeout(function () {
             $('body').addClass('loaded');
         }, 500);
         // Li Lenght
@@ -425,7 +425,7 @@ Assigned to: Theme Forest
         }
     });
     // Window Scroll
-    $(window).scroll(function() {
+    $(window).scroll(function () {
         var wh = window.innerWidth;
         //Go to top
         if ($(this).scrollTop() > 100) {
@@ -434,7 +434,7 @@ Assigned to: Theme Forest
             $('.gotop').removeClass('goto');
         }
     });
-    $(".gotop").on("click", function() {
+    $(".gotop").on("click", function () {
         $("html, body").animate({
             scrollTop: 0
         }, 600);
@@ -443,27 +443,23 @@ Assigned to: Theme Forest
 })(jQuery);
 
 // Scroll title
-var msg  = document.title;
+var msg = document.title;
 var speed = 200;
 var endChar = "";
 var pos = 0;
 var pos_loop = 0;
 
-function moveTitle()
-{
-var ml = msg.length;
-    
-title = msg.substr(pos,ml) + endChar + msg.substr(0,pos);
-document.title = title;
-
-pos++;
-pos_loop++;
-if(pos_loop > 0  && pos > ml){
-pos=0;
-window.setTimeout("moveTitle()",5000);
-} else {
-    window.setTimeout("moveTitle()",speed);
-}
-
+function moveTitle() {
+    var ml = msg.length;
+    title = msg.substr(pos, ml) + endChar + msg.substr(0, pos);
+    document.title = title;
+    pos++;
+    pos_loop++;
+    if (pos_loop > 0 && pos > ml) {
+        pos = 0;
+        window.setTimeout("moveTitle()", 5000);
+    } else {
+        window.setTimeout("moveTitle()", speed);
+    }
 }
 moveTitle();

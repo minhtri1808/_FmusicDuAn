@@ -1,8 +1,13 @@
-@section('title','Tiêu đề trang')
-@extends('pages/_header')
+
+@extends('./../layouts/master')
+
+@section('title','Chi tiết ca sĩ')
+@section('pagesJS','test')
+
+@section('content')
+@stop
 
 
-<!-- ############## -->
 
 
-@extends('pages/_footer')
+

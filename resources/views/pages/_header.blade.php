@@ -22,30 +22,30 @@
 			</div>
 			<div class="ms_nav_wrapper">
 				<ul>
-					<li><a href="artist" class="active" title="Khám phá">
+					<li><a href="" class="{{ Request::routeIs('home') ? 'active' : '' }}" title="Trang chủ">
 							<span class="nav_icon">
 								<span class="icon icon_discover"></span>
 							</span>
 							<span class="nav_text">
-								Nghệ sĩ
+								Trang chủ
 							</span>
 						</a>
 					</li>
-					<li><a href="artistsinger" title="Albums">
+					<li><a href="" title="Albums">
 							<span class="nav_icon">
 								<span class="icon icon_albums"></span>
 							</span>
 							<span class="nav_text">
-								Chi tiết nghệ sĩ
+								Albums
 							</span>
 						</a>
 					</li>
-					<li><a href="artist" title="Nghệ sĩ">
+					<li><a href="artist" class="{{ Request::routeIs('artist') ? 'active' : '' }}" title="Nghệ sĩ">
 							<span class="nav_icon">
 								<span class="icon icon_artists"></span>
 							</span>
 							<span class="nav_text">
-								nghệ sĩ
+								Nghệ sĩ
 							</span>
 						</a>
 					</li>

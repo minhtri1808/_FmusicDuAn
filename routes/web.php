@@ -6,6 +6,7 @@ use App\Http\Controllers\userController;
 use App\Http\Controllers\homeControler;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\TrackSingerController;
+use App\Http\Controllers\SingerController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,12 +21,13 @@ use App\Http\Controllers\TrackSingerController;
 Route::get('/',[homeControler::class, 'index'])->name('home');
 Route::get('/admin',[AdminController::class, 'index'])->name('admin');
 
-Route::get('/artistsinger', function () {
-    return view('pages/artistsinger');
-});
 Route::get('/artist', function () {
     return view('pages/artist');
 });
+Route::get('/artist', [SingerController::class, 'getArtist'])->name('artist');
+Route::get('/artist/{id}', [SingerController::class, 'getOneArtist'])->name('artist');
+Route::get('/artist/{id}/tracks/{qty}', [SingerController::class, 'getTrackByArtist']);
+
 
 
 Route::get('/TrackSingerController',[TrackSingerController::class, 'index'])->name('TrackSingerController.index');

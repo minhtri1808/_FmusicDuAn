@@ -7,6 +7,7 @@ use App\Http\Controllers\homeControler;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\TrackSingerController;
 use App\Http\Controllers\SingerController;
+use App\Http\Controllers\dashboardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,6 +42,8 @@ Route::get('/auth/logout',[authController::class, 'logout'])->name('auth.logout'
 Route::post('/signup',[userController::class, 'store'])->name('signup.post');
 Route::get('/signup',[userController::class, 'index'])->name('signup.index');
 
+Route::get('/cp', function () {return redirect('/controlpanel');});
 
-
-
+Route::group(['prefix'=>'/controlpanel'],function(){
+    Route::get('/', [dashboardController::class, 'anlystic'])->name('anlystic');
+});
